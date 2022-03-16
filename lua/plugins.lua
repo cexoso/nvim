@@ -10,7 +10,8 @@ return require('packer').startup(function()
 		requires = {
 			'kyazdani42/nvim-web-devicons', -- optional, for file icon
 		},
-		config = function() require'nvim-tree'.setup {} end
 	}
-
+	use 'christoomey/vim-tmux-navigator'
+	use 'junegunn/fzf'
+	use 'junegunn/fzf.vim'
 end)

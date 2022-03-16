@@ -18,3 +18,14 @@ local map = function(key)
 end
 
 map {'n', '<Leader>w', ':write<CR>'}
+map {'n', '<Leader>b', ':NvimTreeToggle<CR>'}
+map {'n', 'ZZ', ':wqa<CR>'}
+map {'n', 'ZX', ':qa!<CR>'}
+
+map {'n', '<BS>', ':set nohls<CR>'}
+map {'n', 'o', 'o<esc>'}
+map {'n', 'O', 'O<esc>'}
+map {'n', '<leader>e', ':e!<CR>'}
+
+map {'i', 'jk', '<esc>'}
+
