@@ -14,4 +14,5 @@ return require('packer').startup(function()
 	use 'christoomey/vim-tmux-navigator'
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
+	use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 end)
