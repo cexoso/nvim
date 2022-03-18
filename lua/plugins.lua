@@ -15,4 +15,5 @@ return require('packer').startup(function()
 	use 'junegunn/fzf'
 	use 'junegunn/fzf.vim'
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
+	use 'tpope/vim-surround'
 end)

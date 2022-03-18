@@ -97,6 +97,8 @@ vim.opt.shiftround      = true
 vim.opt.swapfile        = false
 vim.opt.clipboard       = 'unnamed'
 
+-- vim.g.fzf_layout = { width = 1, height = 1 }
+-- vim.g.fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
 if (vim.fn.has('termguicolors') == 1) then
     vim.opt.termguicolors = true
 end
