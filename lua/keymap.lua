@@ -33,3 +33,6 @@ map {'i', 'jk', '<esc>'}
 map {'n', '<C-p>', '<Esc>:GFiles<CR>'}
 map {'n', '<leader><C-p>', '<Esc>:GFiles?<CR>'}
 
+map {'n', 'H', '0'}
+map {'n', 'L', '$'}
+

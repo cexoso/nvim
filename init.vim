@@ -3,5 +3,5 @@ lua require('plugins')
 lua require('init')
 lua require('lsp')
 
-au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=100}
+au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
  
