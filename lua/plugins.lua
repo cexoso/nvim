@@ -17,4 +17,8 @@ return require('packer').startup(function()
 	use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 	use 'tpope/vim-surround'
 	use 'tomtom/tcomment_vim'
+  use 'tanvirtin/monokai.nvim'
+  use 'gcmt/wildfire.vim'
+  use 'tpope/vim-repeat'
+  use 'AndrewRadev/splitjoin.vim'
 end)
