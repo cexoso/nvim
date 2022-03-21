@@ -16,7 +16,7 @@ return require('packer').startup(function()
   use 'junegunn/fzf.vim'
   use 'tpope/vim-surround'
   use 'tomtom/tcomment_vim'
-  
+
   use 'tanvirtin/monokai.nvim'
   use 'gcmt/wildfire.vim'
   use 'tpope/vim-repeat'
@@ -54,5 +54,19 @@ return require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  -- 插入模式获得函数签名
+  use {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("conf.lsp_signature")
+    end
+  }
+  -- 灯泡提示代码行为
+  use {
+    "kosayoda/nvim-lightbulb",
+    config = function()
+      require("conf.nvim-lightbulb")
+    end
   }
 end)
