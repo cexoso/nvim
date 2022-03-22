@@ -17,7 +17,8 @@ local map = function(key)
   end
 end
 
-map {'n', '<Leader>w', ':write<CR>'}
+map {'n', '<Leader>w', ':w<CR>'}
+map {'n', '<Leader>e', ':e!<CR>'}
 map {'n', '<Leader>b', ':NvimTreeFindFileToggle<CR>'}
 map {'n', 'ZZ', ':wqa<CR>'}
 map {'n', 'ZX', ':qa!<CR>'}

@@ -8,3 +8,4 @@ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeou
 " au!
 " autocmd FileType NvimTree nnoremap <buffer> <leader>f :echom "hello"<cr>
 " augroup END 
+
