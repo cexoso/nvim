@@ -37,6 +37,10 @@ map {'n', '<leader><C-p>', '<Esc>:GFiles?<CR>'}
 map {'n', 'H', '0'}
 map {'n', 'L', '$'}
 
+map {'n', "<leader>p" ,'"_dePb'}
+
+
 return {
   map = map
 }
+
