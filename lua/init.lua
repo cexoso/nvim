@@ -2,6 +2,7 @@ local M = {
 }
 
 require'nvim-tree'.setup {
+
   disable_netrw        = false,
   hijack_netrw         = true,
   open_on_setup        = false,
@@ -108,7 +109,7 @@ vim.opt.tabstop=2
 vim.opt.softtabstop=2
 vim.opt.shiftwidth=2
 
-require('monokai').setup { palette = require('monokai').pro }
+-- require('monokai').setup { palette = require('monokai').pro }
 
 vim.g.fzf_layout = { window = {width = 1, height = 1} }
 -- vim.g.fzf_preview_window = ['up:40%:hidden', 'ctrl-/']
