@@ -9,3 +9,6 @@ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeou
 " autocmd FileType NvimTree nnoremap <buffer> <leader>f :echom "hello"<cr>
 " augroup END 
 colorscheme monokai_pro
+
+nmap s <Plug>(easymotion-s2)
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'

@@ -101,4 +101,8 @@ return require('packer').startup(function()
     end
   }
 
+  use {
+    "easymotion/vim-easymotion"
+  }
+
 end)
