@@ -105,4 +105,7 @@ return require('packer').startup(function()
     "easymotion/vim-easymotion"
   }
 
+  use {
+    "tveskag/nvim-blame-line"
+  }
 end)
