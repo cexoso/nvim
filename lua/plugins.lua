@@ -108,4 +108,12 @@ return require('packer').startup(function()
   use {
     "tveskag/nvim-blame-line"
   }
+
+  use {
+    "sindrets/diffview.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("conf.diffview")
+    end
+  }
 end)
