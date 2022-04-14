@@ -74,46 +74,32 @@ cmp.setup(
         -- 绑定补全相关的按键
         mapping = {
             -- 上一个
-            ["<C-p>"] = cmp.mapping.select_prev_item(),
+            ["<c-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+            ["<s-tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
             -- 下一个
-            ["<C-n>"] = cmp.mapping.select_next_item(),
+            ["<c-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+            ["<tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
             -- 选择补全
-            ["<CR>"] = cmp.mapping.confirm(),
+            ["<CR>"] = cmp.mapping.confirm()
             --  出现或关闭补全
-            ["<C-k>"] = cmp.mapping(
-                {
-                    i = function()
-                        if cmp.visible() then
-                            cmp.abort()
-                        else
-                            cmp.complete()
-                        end
-                    end,
-                    c = function()
-                        if cmp.visible() then
-                            cmp.close()
-                        else
-                            cmp.complete()
-                        end
-                    end
-                }
-            ),
-            -- 类似于 IDEA 的功能，如果没进入选择框，tab
-            -- 会选择下一个，如果进入了选择框，tab 会确认当前选择
-            ["<Tab>"] = cmp.mapping(
-                function(fallback)
-                    if cmp.visible() then
-                        local entry = cmp.get_selected_entry()
-                        if not entry then
-                            cmp.select_next_item({behavior = cmp.SelectBehavior.Select})
-                        end
-                        cmp.confirm()
-                    else
-                        fallback()
-                    end
-                end,
-                {"i", "s", "c"}
-            )
+            -- ["<C-k>"] = cmp.mapping(
+            --     {
+            --         i = function()
+            --             if cmp.visible() then
+            --                 cmp.abort()
+            --             else
+            --                 cmp.complete()
+            --             end
+            --         end,
+            --         c = function()
+            --             if cmp.visible() then
+            --                 cmp.close()
+            --             else
+            --                 cmp.complete()
+            --             end
+            --         end
+            --     }
+            -- )
         }
     }
 )
