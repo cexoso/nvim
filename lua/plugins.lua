@@ -122,4 +122,10 @@ return require('packer').startup(function()
   use {
     'kana/vim-arpeggio'
   }
+  use {
+    'voldikss/vim-translator',
+    config = function()
+      require("conf.vim-translator")
+    end
+  }
 end)
