@@ -53,7 +53,10 @@ return require('packer').startup(function()
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require("conf.telescope")
+    end
   }
   -- 插入模式获得函数签名
   use {
