@@ -116,4 +116,10 @@ return require('packer').startup(function()
       require("conf.diffview")
     end
   }
+  use {
+    'preservim/vimux'
+  }
+  use {
+    'kana/vim-arpeggio'
+  }
 end)

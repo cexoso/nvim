@@ -12,3 +12,7 @@ colorscheme monokai_pro
 
 nmap s <Plug>(easymotion-s2)
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
+
+call arpeggio#load()
+Arpeggionoremap rl :VimuxRunLastCommand<CR>
+Arpeggionoremap rp :VimuxPromptCommand<CR>
