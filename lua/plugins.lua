@@ -131,4 +131,11 @@ return require('packer').startup(function()
       require("conf.vim-translator")
     end
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release
+    config = function()
+      require("conf.gitsigns")
+    end
+  }
 end)
