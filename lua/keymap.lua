@@ -45,6 +45,9 @@ map {'n', "<leader>p" ,'"_dePb'}
 map {'n', '$,', ':<C-u>:set paste<CR>viW<esc>`<i<<esc>`>la /><esc>:<C-u>:set nopaste<CR>=='}
 map {'n', '$.', ':<C-u>:set paste<CR>viW"zy<esc>`<i<<esc>`>la><esc>o<esc>"zpviW<esc>`<i</<esc>`>2la><esc>:<C-u>:set nopaste<CR>=at'}
 
+map {'n', '<leader>ss', ':Telescope grep_string<CR>'}
+map {'n', '<leader>sw', ':Telescope live_grep<CR>'}
+
 return {
   map = map
 }

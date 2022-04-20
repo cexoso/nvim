@@ -138,4 +138,5 @@ return require('packer').startup(function()
       require("conf.gitsigns")
     end
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)
