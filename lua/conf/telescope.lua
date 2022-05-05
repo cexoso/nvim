@@ -36,6 +36,7 @@ telescope.setup{
         ["<C-p>"] = "move_selection_previous",
         ["jk"] = require('telescope.actions').close,
         ["<esc>"] = require('telescope.actions').close,
+        ["<C-o>"] = require('telescope.actions').delete_buffer,
       }
     },
     buffer_previewer_maker = new_maker,
