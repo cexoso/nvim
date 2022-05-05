@@ -139,4 +139,10 @@ return require('packer').startup(function()
     end
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -- use {
+  --   'eliba2/vim-node-inspect',
+  --   config = function()
+  --     require("conf.node-inspect")
+  --   end
+  -- }
 end)
