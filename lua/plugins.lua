@@ -142,6 +142,7 @@ return require('packer').startup(function()
     end
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'ZhiyuanLck/smart-pairs', event = 'InsertEnter', config = function() require('pairs'):setup() end}
   -- use {
   --   'eliba2/vim-node-inspect',
   --   config = function()
