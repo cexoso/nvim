@@ -16,7 +16,7 @@ local servers = {
     -- jsonls = require("lsp.jsonls"),
     -- zeta_note = require("lsp.zeta_note"),
     -- sqls = require("lsp.sqls"),
-    -- vuels = require("lsp.vuels")
+    vuels = require("lsp.vuels"),
     rust_analyzer = require("lsp.rust_analyzer"),
 }
 -- 这里是 LSP 服务启动后的按键加载
