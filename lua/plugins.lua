@@ -116,13 +116,6 @@ return require('packer').startup(function()
   }
 
   use {
-    "sindrets/diffview.nvim",
-    requires = "nvim-lua/plenary.nvim",
-    config = function()
-      require("conf.diffview")
-    end
-  }
-  use {
     'preservim/vimux'
   }
   use {
@@ -142,7 +135,7 @@ return require('packer').startup(function()
     end
   }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'ZhiyuanLck/smart-pairs', event = 'InsertEnter', config = function() require('pairs'):setup() end}
+  -- use {'ZhiyuanLck/smart-pairs', event = 'InsertEnter', config = function() require('pairs'):setup() end}
   use {
     'eliba2/vim-node-inspect',
     config = function()
