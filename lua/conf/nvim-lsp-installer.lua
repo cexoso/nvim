@@ -17,6 +17,7 @@ local servers = {
     -- zeta_note = require("lsp.zeta_note"),
     -- sqls = require("lsp.sqls"),
     vuels = require("lsp.vuels"),
+    eslint = require("lsp.eslint"),
     rust_analyzer = require("lsp.rust_analyzer"),
 }
 -- 这里是 LSP 服务启动后的按键加载
