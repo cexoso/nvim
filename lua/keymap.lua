@@ -21,7 +21,9 @@ map {'n', '<Leader>w', ':w<CR>'}
 map {'n', '<Leader>e', ':e!<CR>'}
 map {'n', '<Leader>b', ':NvimTreeFindFileToggle<CR>'}
 map {'n', 'ZZ', ':wqa<CR>'}
+map {'i', 'ZZ', '<esc>:wqa<CR>'}
 map {'n', 'ZX', ':qa!<CR>'}
+map {'i', 'ZX', '<esc>:qa!<CR>'}
 
 map {'n', '<BS>', ':set nohls<CR>'}
 map {'n', 'o', 'o<esc>'}
