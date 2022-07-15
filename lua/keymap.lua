@@ -50,6 +50,9 @@ map {'n', '$.', ':<C-u>:set paste<CR>viW"zy<esc>`<i<<esc>`>la><esc>o<esc>"zpviW<
 map {'n', '<leader>ss', ':Telescope grep_string<CR>'}
 map {'n', '<leader>sw', ':Telescope live_grep<CR>'}
 
+-- <M-p>
+map {'n', 'cp', ':<C-U>:normal viwvpgv"mx<cr>'}
+
 return {
   map = map
 }
