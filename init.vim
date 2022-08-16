@@ -15,5 +15,6 @@ nmap s <Plug>(easymotion-s2)
 let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyz'
 
 call arpeggio#load()
-Arpeggionoremap rl :VimuxRunLastCommand<CR>
+
+Arpeggionoremap rl :wa<CR> :CargoTestAll<CR>
 Arpeggionoremap rp :VimuxPromptCommand<CR>

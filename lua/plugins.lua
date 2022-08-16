@@ -154,4 +154,6 @@ return require('packer').startup(function()
     end
   })
 
+  use({ "jtdowney/vimux-cargo" })
+
 end)
