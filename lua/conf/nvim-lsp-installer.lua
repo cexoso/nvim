@@ -19,6 +19,7 @@ local servers = {
     vuels = require("lsp.vuels"),
     eslint = require("lsp.eslint"),
     rust_analyzer = require("lsp.rust_analyzer"),
+    graphql = require("lsp.graphql"),
 }
 -- 这里是 LSP 服务启动后的按键加载
 local function attach(_, bufnr)
