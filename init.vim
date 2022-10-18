@@ -7,7 +7,7 @@ au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeou
 " augroup NvimTree
 " au!
 " autocmd FileType NvimTree nnoremap <buffer> <leader>f :echom "hello"<cr>
-" augroup END 
+" augroup END
 colorscheme monokai_pro
 " colorscheme delek
 
@@ -18,3 +18,9 @@ call arpeggio#load()
 
 Arpeggionoremap rl :wa<CR> :CargoTestAll<CR>
 Arpeggionoremap rp :VimuxPromptCommand<CR>
+
+let g:UltiSnipsSnippetDirectories = [fnamemodify($MYVIMRC, ":h").."/UltiSnips/"]
+
+let g:UltiSnipsExpandTrigger="<space>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"

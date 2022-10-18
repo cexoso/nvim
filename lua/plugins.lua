@@ -156,4 +156,6 @@ return require('packer').startup(function()
 
   use({ "jtdowney/vimux-cargo" })
 
+  use({ "SirVer/ultisnips" })
+
 end)
