@@ -157,5 +157,6 @@ return require('packer').startup(function()
   use({ "jtdowney/vimux-cargo" })
 
   use({ "SirVer/ultisnips" })
+  use({ "stsewd/fzf-checkout.vim" })
 
 end)
