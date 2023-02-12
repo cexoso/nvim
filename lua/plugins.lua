@@ -159,4 +159,14 @@ return require('packer').startup(function()
   use({ "SirVer/ultisnips" })
   use({ "stsewd/fzf-checkout.vim" })
 
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup({
+        log_level = 'error',
+        pre_save_cmds = { "NvimTreeClose" }
+      })
+    end
+  }
+
 end)
