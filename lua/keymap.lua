@@ -37,6 +37,8 @@ map {'n', '<C-p>', '<Esc>:Telescope git_files<CR>'}
 map {'n', '<leader><C-p>', '<Esc>:Telescope git_status<CR>'}
 map {'n', '<leader><C-r>', '<Esc>:Telescope command_history<CR>'}
 map {'n', '<leader>o', '<Esc>:Telescope buffers<CR>'}
+map {'n', '+', '<Esc><c-w>+<CR>'}
+map {'n', '-', '<Esc><c-w>-<CR>'}
 
 map {'n', 'H', '0'}
 map {'n', 'L', '$'}
