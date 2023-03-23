@@ -1,4 +1,4 @@
-vim.cmd([[autocmd! BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
+-- vim.cmd([[autocmd! BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
 return {
     cmd = {"vscode-eslint-language-server", "--stdio"},
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
