@@ -158,4 +158,12 @@ return require('packer').startup(function()
     end
   }
 
+  use({
+    'toppair/peek.nvim',
+    run = 'deno task --quiet build:fast',
+    config = function()
+      require("conf.nvim-peek")
+    end
+  })
+
 end)
