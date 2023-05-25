@@ -4,10 +4,10 @@ require("lspsaga").setup(
     {
         -- 提示边框样式：round、single、double
         border_style = "round",
-        error_sign = " ",
-        warn_sign = " ",
-        hint_sign = " ",
-        infor_sign = " ",
+        error_sign = "",
+        warn_sign = "",
+        hint_sign = "",
+        infor_sign = "",
         diagnostic_header_icon = " ",
         -- 正在写入的行提示
         code_action_icon = " ",
