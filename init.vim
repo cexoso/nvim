@@ -24,3 +24,4 @@ let g:UltiSnipsSnippetDirectories = [fnamemodify($MYVIMRC, ":h").."/UltiSnips/"]
 let g:UltiSnipsExpandTrigger="<space>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+autocmd FileType markdown nmap <buffer><silent> <leader>i :call mdip#MarkdownClipboardImage()<CR>

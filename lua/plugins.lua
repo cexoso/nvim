@@ -166,4 +166,9 @@ return require('packer').startup(function()
     end
   })
 
+
+  use({
+    'img-paste-devs/img-paste.vim'
+  })
+
 end)
