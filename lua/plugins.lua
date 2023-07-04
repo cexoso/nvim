@@ -48,12 +48,12 @@ return require('packer').startup(function()
     end
   }
   -- LSP 进度提示
-  use {
-    "j-hui/fidget.nvim",
-    config = function()
-      require("conf.fidget")
-    end
-  }
+  -- use {
+  --   "j-hui/fidget.nvim",
+  --   config = function()
+  --     require("conf.fidget")
+  --   end
+  -- }
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} },
