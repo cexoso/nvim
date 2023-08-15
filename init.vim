@@ -25,3 +25,15 @@ let g:UltiSnipsExpandTrigger="<space>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 autocmd FileType markdown nmap <buffer><silent> <leader>i :call mdip#MarkdownClipboardImage()<CR>
+
+function! ExportMMDC()
+  if &filetype == 'markdown' || &filetype == 'md'
+    let out = fnamemodify(expand("%:p"), ":h").."/"..expand('%:t:r')..".pdf"
+    let command = "! md2pdf "..expand("%:p")
+    execute command
+  else
+    echo "not support for "..&filetype.." file"
+  endif
+endfunction
+
+command! MMDC call ExportMMDC()
