@@ -111,7 +111,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   sync_root_with_cwd = false,
   reload_on_bufenter = false,
   respect_buf_cwd = false,
-  remove_keymaps = false,
   on_attach = on_attach,
   select_prompts = false,
   view = {
@@ -119,16 +118,11 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     cursorline = true,
     debounce_delay = 15,
     width = 30,
-    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
     float = {
       enable = false,
       quit_on_focus_loss = true,
