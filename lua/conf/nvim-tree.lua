@@ -237,7 +237,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   filesystem_watchers = {
     enable = true,
     debounce_delay = 50,
-    ignore_dirs = {},
+    ignore_dirs = {
+      "node_modules"
+    },
   },
   git = {
     enable = true,
