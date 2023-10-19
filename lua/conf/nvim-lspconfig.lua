@@ -2,6 +2,7 @@ local map = require('keymap').map;
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.tsserver.setup {}
+require('lsp.volar')
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
