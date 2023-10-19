@@ -153,6 +153,9 @@ return require('packer').startup(function()
     config = function()
       require("auto-session").setup({
         log_level = 'error',
+        buftypes_to_ignore = {
+          'gitcommit'
+        },
         pre_save_cmds = { "NvimTreeClose" }
       })
     end
