@@ -32,13 +32,13 @@ return require('packer').startup(function()
     end
   }
 
-  use({ 
-    "williamboman/mason.nvim",
-    config = function()
-      require("conf.mason")
-    end
-  })
-  use({ "williamboman/mason-lspconfig.nvim" })
+  -- use({ 
+  --   "williamboman/mason.nvim",
+  --   config = function()
+  --     require("conf.mason")
+  --   end
+  -- })
+  -- use({ "williamboman/mason-lspconfig.nvim" })
 
   -- LSP UI 美化
   use {
