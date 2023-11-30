@@ -37,3 +37,15 @@ function! ExportMMDC()
 endfunction
 
 command! MMDC call ExportMMDC()
+
+function! GenerateModule()
+  if &filetype == 'typescriptreact' || &filetype == 'vue'
+    let cwd = fnamemodify(expand("%:p"), ":h")
+    let command = "!wf generate -c "..cwd.." "..expand('<cword>')
+    execute command
+  else
+    echo "not support for "..&filetype.." file"
+  endif
+endfunction
+
+command! GM call GenerateModule()
