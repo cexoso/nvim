@@ -161,17 +161,15 @@ return require('packer').startup(function()
     end
   }
 
-  use({
-    'toppair/peek.nvim',
-    run = 'deno task --quiet build:fast',
-    config = function()
-      require("conf.nvim-peek")
-    end
-  })
-
 
   use({
     'img-paste-devs/img-paste.vim'
+  })
+
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
 
 end)
