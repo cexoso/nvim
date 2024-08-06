@@ -1,8 +1,24 @@
 local map = require('keymap').map;
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {}
-require('lsp.volar')
+
+lspconfig.tsserver.setup {
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        languages = {"vue"},
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+}
+
+-- require('lsp.volar')
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
