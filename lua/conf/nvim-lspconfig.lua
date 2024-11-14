@@ -2,7 +2,7 @@ local map = require('keymap').map;
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   init_options = {
     plugins = {
       {
