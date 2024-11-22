@@ -16,7 +16,7 @@ vim.go.neoformat_basic_format_retab = 0
 -- 只提示错误消息
 vim.go.neoformat_only_msg_on_error = 1
 
-vim.cmd("let g:neoformat_try_node_exe = 1")
+vim.go.neoformat_try_node_exe = 1
 
 -- 自动格式化
 
