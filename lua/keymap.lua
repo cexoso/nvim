@@ -43,7 +43,7 @@ map {'n', '-', '<Esc><c-w>-<CR>'}
 map {'n', 'H', '0'}
 map {'n', 'L', '$'}
 
-map {'n', "<leader>p" ,'"_dePb'}
+map {'i', "<c-p>" , '<c-r>+'}
 
 -- this is a key map for extand string as a tag line div -> <div /> or <div></div> with a style format
 map {'n', '$,', ':<C-u>:set paste<CR>viW<esc>`<i<<esc>`>la /><esc>:<C-u>:set nopaste<CR>=='}
