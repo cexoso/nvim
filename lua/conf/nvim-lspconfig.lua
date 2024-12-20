@@ -7,6 +7,7 @@ lspconfig.ts_ls.setup {
     plugins = {
       {
         name = "@vue/typescript-plugin",
+        location = "~/node_modules/@vue/typescript-plugin",
         languages = {"vue"},
       },
     },
