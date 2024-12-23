@@ -41,12 +41,13 @@ return require('packer').startup(function()
   -- use({ "williamboman/mason-lspconfig.nvim" })
 
   -- LSP UI 美化
-  use {
-    "tami5/lspsaga.nvim",
-    config = function()
-      require("conf.lspsaga")
-    end
-  }
+  use ({
+      'nvimdev/lspsaga.nvim',
+      after = 'nvim-lspconfig',
+      config = function()
+          require('conf.lspsaga')
+      end,
+  })
   -- LSP 进度提示
   -- use {
   --   "j-hui/fidget.nvim",
