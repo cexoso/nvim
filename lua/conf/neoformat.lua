@@ -14,4 +14,6 @@ local map = require('keymap').map;
 -- augroup END
 -- ]])
 
+vim.g.neoformat_try_node_exe = 1
+
 map { "n", "<C-f>", "<cmd>Neoformat<CR>"}
