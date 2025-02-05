@@ -49,3 +49,5 @@ function! GenerateModule()
 endfunction
 
 command! GM call GenerateModule()
+
+let $PATH = '/Users/xiongjie/Library/Caches/fnm_multishells/21132_1738727315752/bin:' . $PATH
