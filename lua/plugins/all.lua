@@ -111,14 +111,6 @@ return {
     end
   },
 
-  -- Git integration
-  {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('conf.gitsigns')
-    end
-  },
-
   -- Telescope enhancements
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
@@ -138,29 +130,6 @@ return {
 
   -- Git branch checkout with fzf
   { 'stsewd/fzf-checkout.vim' },
-
-  -- Session management
-  {
-    'rmagatti/auto-session',
-    config = function()
-      require('auto-session').setup({
-        log_level = 'error',
-        buftypes_to_ignore = { 'gitcommit' },
-        pre_save_cmds = { 'NvimTreeClose' }
-      })
-    end
-  },
-  -- Session management
-  {
-    'rmagatti/auto-session',
-    config = function()
-      require('auto-session').setup({
-        log_level = 'error',
-        buftypes_to_ignore = { 'gitcommit' },
-        pre_save_cmds = { 'NvimTreeClose' }
-      })
-    end
-  },
 
   -- Image pasting
   { 'img-paste-devs/img-paste.vim' },
