@@ -281,7 +281,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
         picker = "default",
         chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          filetype = { "notify", "qf", "diff", "fugitive", "fugitiveblame" },
           buftype = { "nofile", "terminal", "help" },
         },
       },

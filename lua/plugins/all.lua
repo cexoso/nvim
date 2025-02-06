@@ -1,7 +1,4 @@
 return {
-  -- Package manager
-  { 'wbthomason/packer.nvim' },
-
   -- File explorer
   {
     'nvim-tree/nvim-tree.lua',
