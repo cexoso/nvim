@@ -96,7 +96,6 @@ return {
 
   -- Motion plugins
   { 'easymotion/vim-easymotion' },
-  { 'tveskag/nvim-blame-line' },
   { 'preservim/vimux' },
   { 'kana/vim-arpeggio' },
 
