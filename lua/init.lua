@@ -28,12 +28,6 @@ vim.cmd("call arpeggio#load()")
 vim.cmd("Arpeggionoremap rl :wa<CR> :CargoTestAll<CR>")
 vim.cmd("Arpeggionoremap rp :VimuxPromptCommand<CR>")
 
--- UltiSnips 配置
-vim.g.UltiSnipsSnippetDirectories = {vim.fn.fnamemodify(vim.fn.expand("$MYVIMRC"), ":h").."/UltiSnips/"}
-vim.g.UltiSnipsExpandTrigger = "<space>"
-vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<S-tab>"
-
 -- Markdown 图片粘贴快捷键
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",

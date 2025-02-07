@@ -72,6 +72,7 @@ return {
   -- Auto-completion plugins
   {
     'hrsh7th/nvim-cmp',
+    priority = 900,
     dependencies = {
       { 'onsails/lspkind-nvim' },
       { 'hrsh7th/vim-vsnip' },
@@ -130,7 +131,17 @@ return {
   { 'jtdowney/vimux-cargo' },
 
   -- Snippets
-  { 'SirVer/ultisnips' },
+  { 
+    'SirVer/ultisnips',
+    priority = 1000,
+    config = function()
+      vim.g.UltiSnipsExpandTrigger = "<space>"
+      vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
+      vim.g.UltiSnipsJumpBackwardTrigger = "<S-tab>"
+      vim.g.UltiSnipsSnippetDirectories = {vim.fn.fnamemodify(vim.fn.expand("$MYVIMRC"), ":h").."/UltiSnips/"}
+      -- 其他 UltiSnips 的配置...
+    end,
+  },
 
   -- Git branch checkout with fzf
   { 'stsewd/fzf-checkout.vim' },
