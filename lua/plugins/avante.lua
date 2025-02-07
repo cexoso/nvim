@@ -119,6 +119,7 @@ return {
   dependencies = {
     "stevearc/dressing.nvim",
     "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "echasnovski/mini.pick", -- for file_selector provider mini.pick
