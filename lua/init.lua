@@ -18,8 +18,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --   end
 -- })
 
--- 设置配色方案
-vim.cmd("colorscheme monokai_pro")
 
 -- EasyMotion 配置
 vim.api.nvim_set_keymap('n', 's', '<Plug>(easymotion-s2)', {})

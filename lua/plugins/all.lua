@@ -14,7 +14,15 @@ return {
   { 'junegunn/fzf.vim' },
   { 'tpope/vim-surround' },
   { 'tomtom/tcomment_vim' },
-  { 'tanvirtin/monokai.nvim' },
+  { 
+    priority = 1000,
+    lazy = false,
+    'tanvirtin/monokai.nvim',
+    config = function ()
+     -- 设置配色方案
+     vim.cmd("colorscheme monokai_pro")
+    end
+  },
   { 'gcmt/wildfire.vim' },
   { 'tpope/vim-repeat' },
   { 'AndrewRadev/splitjoin.vim' },
