@@ -119,14 +119,6 @@ return {
   -- Telescope enhancements
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
-  -- Node.js debugger
-  {
-    'eliba2/vim-node-inspect',
-    config = function()
-      require('conf.node-inspect')
-    end
-  },
-
   -- Cargo integration for Vimux
   { 'jtdowney/vimux-cargo' },
 
