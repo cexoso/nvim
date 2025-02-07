@@ -67,7 +67,7 @@ return {
     hints = { enabled = true },
     windows = {
       ---@type "right" | "left" | "top" | "bottom"
-      position = "right", -- the position of the sidebar
+      position = "bottom", -- the position of the sidebar
       wrap = true, -- similar to vim.o.wrap
       width = 30, -- default % based on available width
       sidebar_header = {
@@ -85,7 +85,7 @@ return {
       },
       ask = {
         floating = false, -- Open the 'AvanteAsk' prompt in a floating window
-        start_insert = true, -- Start insert mode when opening the ask window
+        start_insert = false, -- Start insert mode when opening the ask window
         border = "rounded",
         ---@type "ours" | "theirs"
         focus_on_apply = "ours", -- which diff to focus after applying
