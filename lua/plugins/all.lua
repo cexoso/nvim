@@ -139,13 +139,5 @@ return {
   { 'stsewd/fzf-checkout.vim' },
 
   -- Image pasting
-  { 'img-paste-devs/img-paste.vim' },
-
-  -- Markdown preview plugin
-  {
-    "iamcco/markdown-preview.nvim",
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end
-  }
+  { 'img-paste-devs/img-paste.vim' }
 }
