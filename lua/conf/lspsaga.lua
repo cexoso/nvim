@@ -5,6 +5,9 @@ lspsaga.setup {
     code_action = '',
     devicon = true,
   },
+  symbol_in_winbar = {
+    enable = false
+  },
   border = 'single',
   hover = {
     max_width = 0.9,
