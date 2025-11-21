@@ -55,6 +55,9 @@ map {'n', '<leader>sw', ':Telescope live_grep<CR>'}
 -- <M-p>
 map {'n', 'cp', ':<C-U>:normal viwvpgv"mx<cr>'}
 
+-- Claude AI - 在 visual 模式下使用
+map {'v', '<leader>ai', ':ClaudeAsk<CR>'}
+
 return {
   map = map
 }

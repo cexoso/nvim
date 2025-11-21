@@ -1,4 +1,5 @@
 require('keymap')
+require('claude_ai')
 -- require('plugins')
 
 -- 复制高亮
@@ -63,6 +64,12 @@ function GenerateModule()
 end
 
 vim.api.nvim_create_user_command('GM', GenerateModule, {})
+
+-- Claude AI 命令
+local claude = require('claude_ai')
+vim.api.nvim_create_user_command('ClaudeAsk', function()
+  claude.ask_claude_and_replace()
+end, { range = true })
 
 -- 设置 PATH
 vim.env.PATH = '/Users/xiongjie/Library/Caches/fnm_multishells/21132_1738727315752/bin:' .. vim.env.PATH
