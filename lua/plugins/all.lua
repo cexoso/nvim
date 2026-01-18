@@ -139,5 +139,20 @@ return {
   { 'stsewd/fzf-checkout.vim' },
 
   -- Image pasting
-  { 'img-paste-devs/img-paste.vim' }
+  { 'img-paste-devs/img-paste.vim' },
+  {
+    "MattesGroeger/vim-bookmarks",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "tom-anders/telescope-vim-bookmarks.nvim",
+    },
+    config = function()
+      -- 核心：加载扩展 + 绑定 ma 快捷键
+      require("telescope").load_extension("vim_bookmarks")
+      vim.g.bookmark_sign = "📖"               -- 设置书签符号为🔖（和原功能完全一致）
+      vim.keymap.set("n", "ma", function()
+        require("telescope").extensions.vim_bookmarks.all()
+      end)
+    end,
+  }
 }
