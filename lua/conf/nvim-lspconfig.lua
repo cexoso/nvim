@@ -1,13 +1,14 @@
 local map = require('keymap').map;
--- Setup language servers.
-local lspconfig = require('lspconfig')
+-- Setup language servers using new vim.lsp.config API (Neovim 0.11+)
 
-lspconfig.ts_ls.setup {
+-- TypeScript/JavaScript server with Vue support
+-- Override the default ts_ls config from nvim-lspconfig
+vim.lsp.config('ts_ls', {
   init_options = {
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = "~/node_modules/@vue/typescript-plugin",
+        location = vim.fn.expand("~/node_modules/@vue/typescript-plugin"),
         languages = {"vue"},
       },
     },
@@ -19,15 +20,12 @@ lspconfig.ts_ls.setup {
     'javascriptreact',
     'typescriptreact',
   },
-}
+})
 
--- require('lsp.volar')
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
+-- Enable the language servers
+-- nvim-lspconfig provides default configs, we just enable them
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('rust_analyzer')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
