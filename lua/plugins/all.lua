@@ -137,12 +137,10 @@ return {
 
   -- Git branch checkout with fzf
   { 'stsewd/fzf-checkout.vim' },
-
-  -- Image pasting
-  { 'img-paste-devs/img-paste.vim' },
   {
     "MattesGroeger/vim-bookmarks",
     dependencies = {
+
       "nvim-telescope/telescope.nvim",
       "tom-anders/telescope-vim-bookmarks.nvim",
     },
