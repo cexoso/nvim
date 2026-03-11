@@ -3,7 +3,30 @@ local function on_attach(bufnr)
 
   local function opts(desc)
     return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-end
+  end
+
+  -- Custom function to open images with system viewer
+  local function open_file_or_image()
+    local node = api.tree.get_node_under_cursor()
+    if node and node.type == 'file' then
+      local file_path = node.absolute_path
+      local image_extensions = { 'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'svg', 'ico' }
+      local extension = file_path:match("^.+%.(.+)$")
+
+      if extension then
+        extension = extension:lower()
+        for _, img_ext in ipairs(image_extensions) do
+          if extension == img_ext then
+            -- Use macOS 'open' command to open with system default
+            vim.fn.jobstart({ 'open', file_path }, { detach = true })
+            return
+          end
+        end
+      end
+    end
+    -- If not an image, use default open behavior
+    api.node.open.edit()
+  end
 
 -- Default mappings. Feel free to modify or remove as you wish.
 --
@@ -69,7 +92,7 @@ vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
 vim.keymap.set('n', '<BS>', api.tree.change_root_to_parent, opts('Up'))
 vim.keymap.set('n', '<cr>', api.tree.change_root_to_node, opts('CD'))
 vim.keymap.set('n', 'O', api.node.open.no_window_picker, opts('Open: No Window Picker'))
-vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
+vim.keymap.set('n', 'o', open_file_or_image, opts('Open'))
 vim.keymap.set('n', '<Tab>', api.node.open.preview, opts('Open Preview'))
 vim.keymap.set('n', 'I', api.tree.toggle_gitignore_filter, opts('Toggle Git Ignore'))
 vim.keymap.set('n', 'H', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
