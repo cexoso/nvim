@@ -1,0 +1,10 @@
+snippet cl "fmt.Println" b
+fmt.Println(
+`!p snip.rv = snip.mkline("	")`"debugger 🐛 $1",
+`!p snip.rv = snip.mkline("	")`$1
+)$0
+endsnippet
+
+snippet clf "fmt.Printf" b
+fmt.Printf("$1: %v\n", $1)$0
+endsnippet
