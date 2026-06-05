@@ -10,7 +10,7 @@ local function on_attach(bufnr)
     local node = api.tree.get_node_under_cursor()
     if node and node.type == 'file' then
       local file_path = node.absolute_path
-      local image_extensions = { 'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'svg', 'ico' }
+      local image_extensions = { 'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'svg', 'ico', 'drawio' }
       local extension = file_path:match("^.+%.(.+)$")
 
       if extension then
