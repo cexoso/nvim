@@ -26,6 +26,7 @@ vim.lsp.config('ts_ls', {
 -- nvim-lspconfig provides default configs, we just enable them
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('gopls')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
