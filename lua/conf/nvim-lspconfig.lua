@@ -41,7 +41,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map { "n", "gd",   "<cmd>Telescope lsp_definitions theme=dropdown<CR>" }
     -- -- 列出光标下所有引用（代替内置 LSP 的窗口，telescope 插件让查看引用更方便）
     -- vim.keybinds.bmap(bufnr, "n", "gr", "<cmd>Telescope lsp_references theme=dropdown<CR>", vim.keybinds.opts)
-    map { "n", "gr",  "<cmd>Telescope lsp_references theme=dropdown<CR>" }
+    -- gr  → 过滤掉 *.test.* / *.spec.* 的引用
+    -- grA → 显示全部引用（含测试文件）
+    map { "n", "gr",  "<cmd>lua require('user.lsp_refs').references({ exclude_tests = true })<CR>" }
+    map { "n", "grA", "<cmd>Telescope lsp_references theme=dropdown<CR>" }
     -- -- 工作区诊断（代替内置 LSP 的窗口，telescope 插件让工作区诊断更方便）
     map { "n", "go",  "<cmd>Telescope diagnostics theme=dropdown<CR>" }
     -- -- 显示代码可用操作（代替内置 LSP 的窗口，telescope 插件让代码行为更方便）
