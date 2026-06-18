@@ -20,7 +20,7 @@ function M.references(opts)
   local exclude_tests = opts.exclude_tests
 
   local params = vim.lsp.util.make_position_params(0, 'utf-8')
-  params.context = { includeDeclaration = true }
+  params.context = { includeDeclaration = false }
 
   vim.lsp.buf_request(0, 'textDocument/references', params, function(err, result, ctx)
     if err then
@@ -47,7 +47,7 @@ function M.references(opts)
 
     if vim.tbl_isempty(filtered) then
       vim.notify(
-        ('All %d references are in test files. Use grA to view them.'):format(total),
+        ('All %d references are in test files. Use <leader>gr to view them.'):format(total),
         vim.log.levels.INFO
       )
       return
@@ -55,6 +55,13 @@ function M.references(opts)
 
     local client = vim.lsp.get_client_by_id(ctx.client_id)
     local offset_encoding = client and client.offset_encoding or 'utf-16'
+
+    -- 只有一个引用时直接跳转，跳过 picker
+    if #filtered == 1 then
+      vim.lsp.util.show_document(filtered[1], offset_encoding, { focus = true })
+      return
+    end
+
     local items = vim.lsp.util.locations_to_items(filtered, offset_encoding)
 
     local themes = require('telescope.themes')

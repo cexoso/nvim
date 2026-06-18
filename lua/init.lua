@@ -2,6 +2,13 @@ require('keymap')
 require('claude_ai')
 -- require('plugins')
 
+-- 删除 Neovim 0.11+ 内置的 gr* 全局映射（grn/gra/grr/gri/grt/gO），
+-- 否则按 gr 会等 timeoutlen 来判断是否要补一个字符。
+-- 我们用自己的 gr → user.lsp_refs.references 代替。
+for _, k in ipairs({ 'grn', 'gra', 'grr', 'gri', 'grt', 'gO' }) do
+  pcall(vim.keymap.del, 'n', k)
+end
+
 -- 复制高亮
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
