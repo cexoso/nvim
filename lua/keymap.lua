@@ -43,6 +43,12 @@ map {'n', '-', '<Esc><c-w>-<CR>'}
 map {'n', 'H', '0'}
 map {'n', 'L', '$'}
 
+-- Y: 复制 "<绝对路径>:<行号>: <当前行内容>" 到系统剪贴板
+-- （覆盖默认 Y=y$ 的行为，y$ 仍可用）
+map {'n', 'Y', '<cmd>lua require("user.yank_loc").yank()<CR>'}
+-- Visual 模式 Y: 复制 "<绝对路径>:<起始行>:<结束行>\n<选中代码>"
+map {'x', 'Y', ':<C-u>lua require("user.yank_loc").yank_visual()<CR>'}
+
 map {'i', "<c-p>" , '<c-r>+'}
 
 -- this is a key map for extand string as a tag line div -> <div /> or <div></div> with a style format

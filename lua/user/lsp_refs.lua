@@ -15,12 +15,28 @@ local function is_test_file(path)
   return false
 end
 
+-- 把 LSP location 标准化为 "uri:line:col" 用于去重比较。
+-- references 和 definition 返回的范围可能不完全一致（一个指标识符、一个指整个声明），
+-- 所以只比较起始 uri + 起始行，足以判断是不是同一个声明。
+local function loc_key(loc)
+  local uri = loc.uri or loc.targetUri
+  local range = loc.range or loc.targetSelectionRange or loc.targetRange
+  if not uri or not range then return nil end
+  return uri .. ':' .. range.start.line
+end
+
 function M.references(opts)
   opts = opts or {}
   local exclude_tests = opts.exclude_tests
 
   local params = vim.lsp.util.make_position_params(0, 'utf-8')
-  params.context = { includeDeclaration = true }
+  params.context = { includeDeclaration = false }
+
+  -- 当前光标所在文件的 URI + 行号，用于剔除"光标自己所在的那一项"
+  -- （即你按 gr 时正盯着的那一行调用 / 声明 — 不需要再列出来）
+  local cur_uri = vim.uri_from_bufnr(0)
+  local cur_line = params.position.line
+  local cur_key = cur_uri .. ':' .. cur_line
 
   vim.lsp.buf_request(0, 'textDocument/references', params, function(err, result, ctx)
     if err then
@@ -33,21 +49,22 @@ function M.references(opts)
     end
 
     local total = #result
-    local filtered = result
-    if exclude_tests then
-      filtered = {}
-      for _, item in ipairs(result) do
-        local uri = item.uri or item.targetUri
-        local path = uri and vim.uri_to_fname(uri) or ''
-        if not is_test_file(path) then
-          table.insert(filtered, item)
-        end
+    local filtered = {}
+    for _, item in ipairs(result) do
+      local uri = item.uri or item.targetUri
+      local path = uri and vim.uri_to_fname(uri) or ''
+      if exclude_tests and is_test_file(path) then
+        -- skip
+      elseif loc_key(item) == cur_key then
+        -- 跳过光标当前所在的那一项（"自己"）
+      else
+        table.insert(filtered, item)
       end
     end
 
     if vim.tbl_isempty(filtered) then
       vim.notify(
-        ('All %d references are in test files. Use grA to view them.'):format(total),
+        ('No other references found (%d filtered).'):format(total),
         vim.log.levels.INFO
       )
       return
@@ -55,6 +72,13 @@ function M.references(opts)
 
     local client = vim.lsp.get_client_by_id(ctx.client_id)
     local offset_encoding = client and client.offset_encoding or 'utf-16'
+
+    -- 只有一个引用时直接跳转，跳过 picker
+    if #filtered == 1 then
+      vim.lsp.util.show_document(filtered[1], offset_encoding, { focus = true })
+      return
+    end
+
     local items = vim.lsp.util.locations_to_items(filtered, offset_encoding)
 
     local themes = require('telescope.themes')
