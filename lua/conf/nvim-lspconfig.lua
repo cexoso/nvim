@@ -3,12 +3,14 @@ local map = require('keymap').map;
 
 -- TypeScript/JavaScript server with Vue support
 -- Override the default ts_ls config from nvim-lspconfig
+local vue_plugin_path = vim.fn.trim(vim.fn.system("npm root -g 2>/dev/null")) .. "/@vue/typescript-plugin"
+
 vim.lsp.config('ts_ls', {
   init_options = {
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = vim.fn.expand("~/node_modules/@vue/typescript-plugin"),
+        location = vue_plugin_path,
         languages = {"vue"},
       },
     },
@@ -25,8 +27,6 @@ vim.lsp.config('ts_ls', {
 -- Enable the language servers
 -- nvim-lspconfig provides default configs, we just enable them
 vim.lsp.enable('ts_ls')
-vim.lsp.enable('rust_analyzer')
-vim.lsp.enable('gopls')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

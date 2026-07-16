@@ -27,6 +27,15 @@ return {
   { 'tpope/vim-repeat' },
   { 'AndrewRadev/splitjoin.vim' },
 
+  -- Mason: LSP server installer
+  {
+    'williamboman/mason.nvim',
+    dependencies = { 'williamboman/mason-lspconfig.nvim' },
+    config = function()
+      require('conf.mason')
+    end
+  },
+
   -- LSP configuration
   {
     'neovim/nvim-lspconfig',

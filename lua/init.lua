@@ -78,8 +78,11 @@ vim.api.nvim_create_user_command('ClaudeAsk', function()
   claude.ask_claude_and_replace()
 end, { range = true })
 
--- 设置 PATH
-vim.env.PATH = '/Users/xiongjie/Library/Caches/fnm_multishells/21132_1738727315752/bin:' .. vim.env.PATH
+-- 让 nvim 能找到 fnm 管理的 node（跟随 default alias，切换版本无需改配置）
+local fnm_bin = vim.fn.expand("~/.local/share/fnm/aliases/default/bin")
+if vim.fn.isdirectory(fnm_bin) == 1 then
+  vim.env.PATH = fnm_bin .. ":" .. vim.env.PATH
+end
 local M = {
 }
 
