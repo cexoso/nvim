@@ -79,7 +79,11 @@ vim.api.nvim_create_user_command('ClaudeAsk', function()
 end, { range = true })
 
 -- 让 nvim 能找到 fnm 管理的 node（跟随 default alias，切换版本无需改配置）
-local fnm_bin = vim.fn.expand("~/.local/share/fnm/aliases/default/bin")
+-- macOS 下 fnm 默认数据目录在 ~/Library/Application Support/fnm，Linux 在 ~/.local/share/fnm
+local fnm_bin = vim.fn.expand("~/Library/Application Support/fnm/aliases/default/bin")
+if vim.fn.isdirectory(fnm_bin) ~= 1 then
+  fnm_bin = vim.fn.expand("~/.local/share/fnm/aliases/default/bin")
+end
 if vim.fn.isdirectory(fnm_bin) == 1 then
   vim.env.PATH = fnm_bin .. ":" .. vim.env.PATH
 end
