@@ -14,13 +14,29 @@ return {
   { 'junegunn/fzf.vim' },
   { 'tpope/vim-surround' },
   { 'tomtom/tcomment_vim' },
-  { 
+  {
     priority = 1000,
     lazy = false,
     'tanvirtin/monokai.nvim',
-    config = function ()
-     -- 设置配色方案
-     vim.cmd("colorscheme monokai_pro")
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    enabled = false,
+  },
+  {
+    'maxmx03/solarized.nvim',
+    priority = 999,
+    lazy = false,
+    config = function()
+      local mode = vim.trim(vim.fn.system('cat ~/.config/theme-mode 2>/dev/null || echo dark'))
+      if mode == 'light' then
+        require('solarized').setup({ variant = 'spring' })
+        vim.o.background = 'light'
+        vim.cmd('colorscheme solarized')
+      else
+        vim.cmd('colorscheme monokai_pro')
+      end
     end
   },
   { 'gcmt/wildfire.vim' },
